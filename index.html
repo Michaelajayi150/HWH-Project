@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta name="description" content="Sign Up to create a new account with us">
+    <!-- Title -->
+    <title>Sign Up Form</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/responsive.css">
+  </head>
+  <body>
+    <h4>Crystal Clear </h4>
+    <main>
+      <form class="form" id="form">
+        <!-- Logo of Organization -->
+        <div class="logo">
+          <img src="./asset/logo.png" alt="Crystal Clear Logo" width="100%">
+        </div>
+        
+        <div class="header"><span>Sign Up</span></div>
+         
+        <div class="main-form">
+          <!-- Username -->
+          <div class="form-control username">
+            <input type="text" id="username" placeholder="Username">
+            <span class="small"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-control email">
+            <input type="email" id="email" placeholder="Email">
+            <span class="small"></span>
+          </div> 
+
+          <!-- Password -->
+          <div class="form-control password">
+            <input type="password" id="password" placeholder="Password">
+            <span class="small"></span>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-control con-password">
+            <input type="password" id="con-password" placeholder="Confirm Password">
+            <span class="small"></span>
+          </div>
+
+          <!-- Gender -->
+          <div class="gender">
+            <div style="font-size: 13px;">Choose Gender</div>
+            <select>
+              <optgroup>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Others</option>
+              </optgroup>
+            </select>
+          </div>
+
+         <!-- Submit Button -->
+          <div class="submit">
+            <button class="submit-btn">Submit</button>
+          </div>
+        </div>
+        
+        <!-- Login Link
+           Not functioning (Project is just a single Page) -->
+        <div class="login-link">
+          <span>Already have an account? <a href="#">Login Here</a></span> 
+        </div>
+      </form>
+      
+      <!-- Display only for Desktop -->
+      <div class="bg-image">
+        <div class="bg-word">The Mind Reflects The World</div>
+        <div class="">Lets Build The Mind</div>
+      </div>
+    </main>
+  </body>
+  
+  <!-- JavaScript Link --> 
+  <script src="./JS/script.js"></script>
+</html>
