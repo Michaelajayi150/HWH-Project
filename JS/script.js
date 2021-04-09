@@ -15,21 +15,23 @@ form.addEventListener('submit', (e) => {
 });
 
 
-function checkValues() {
-  
-  // Get all values and remove whitespaces
+username.addEventListener('change', (e) => {
   var usernameValue = username.value.trim();
-  var emailValue = email.value.trim();
-  var passwordValue = password.value.trim();
-  var passwordConValue = passwordCon.value.trim();
-  
   // Username must not be blank
   if (usernameValue === "") {
     setErrorFor(username, "Username cannot be blank");
-  } else {
+  }
+  // Username must have more than 8 character
+  else if (usernameValue.length < 8) {
+    setErrorFor(username, "Username must be more than 8 character");
+  }
+  else {
     setSuccessFor(username);
   }
-  
+});
+                          
+email.addEventListener('change', (e) => {
+  var emailValue = email.value.trim();
   // Email must have a value or throw an error
   if (emailValue === ""){
     setErrorFor(email, "Email cannot be blank");
@@ -41,6 +43,10 @@ function checkValues() {
   else {
     setSuccessFor(email);
   }
+});
+
+password.addEventListener('change', (e) => {
+  var passwordValue = password.value.trim();
   
   // Password must not be blank
   if (passwordValue === "") {
@@ -52,6 +58,11 @@ function checkValues() {
   } else {
     setSuccessFor(password);
   }
+});
+  
+passwordCon.addEventListener('change', (e) => {
+  var passwordValue = password.value.trim();
+  var passwordConValue = passwordCon.value.trim();
   
   // Confirm Password must not be blank
   if (passwordConValue === "") {
@@ -63,8 +74,7 @@ function checkValues() {
   } else {
     setSuccessFor(passwordCon);
   }
-  
-}
+});
 
 // Set Inputs are Invalid
 function setErrorFor(input, message) {
@@ -83,12 +93,15 @@ function setSuccessFor(input) {
   const formControl = input.parentElement;
   // Add success class
   formControl.className = "form-control success";
-  
-  // Alert Message
-  alert("Welcome" + " " + username.value);
 }
 
 // Regex for validating Email
 function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+function checkValues() {
+  if (username.value.length > 8) {
+    alert("Welcome" + " " + username.value);
+  }
 }
